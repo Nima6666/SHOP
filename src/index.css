@@ -3,3 +3,70 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#error {
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+#error > button {
+  border: 1px solid white;
+  background-color: rgb(33, 33, 33);
+  color: white;
+  font-size: large;
+  border-radius: 15px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+@media (max-width: 1250px) {
+  html {
+    font-size: 16px;
+  }
+  .item {
+    flex-direction: column;
+  }
+  .itemClicked {
+    top: 35vh;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 650px) {
+  #shopBtn {
+    font-size: 10vw;
+  }
+  .items {
+    grid-template-columns: repeat(auto-fill, 80vw);
+  }
+  .item {
+    width: 90vw;
+    padding: 2px;
+    margin-bottom: 50px;
+  }
+  .itemClicked {
+    top: 35vh;
+    padding: 2px;
+  }
+  .item > img {
+    width: 70vw;
+  }
+  .imageContainer {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartContainer {
+    padding: 5px;
+    width: 90vw;
+  }
+  .cartItem {
+    width: 100%;
+  }
+}

@@ -24,12 +24,14 @@ export default function Cart() {
           )}
           {cartItems.length > 0 ? (
             <div className="total">
+              <div>Shipping Fee : $80+</div>
               Total : $
               {Math.ceil(
                 cartItems.reduce((total, currentItem) => {
                   return total + currentItem.price;
                 }, 0)
-              )}
+              ) + 80}
+              <button className="checkout">Checkout</button>
             </div>
           ) : (
             ""

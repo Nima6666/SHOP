@@ -8,12 +8,13 @@ import tick from "../../assets/tick.png";
 import Back from "../../assets/back.png";
 
 export default function Item({ id }) {
-  const history = useNavigate();
   let duplicate = false;
+  const history = useNavigate();
   const { data } = useContext(MyContext);
   const { cartItems, setCartItems } = useContext(MyContext);
-  console.log(cartItems);
   function checkCart() {
+    const itemAddedMsg = document.querySelector(".itemAddedMsg");
+    itemAddedMsg.setAttribute("style", "display:block; animation: none");
     cartItems.forEach((cartItem) => {
       if (cartItem.id == id) {
         document.getElementById("addToCart").style.backgroundColor =
@@ -21,6 +22,11 @@ export default function Item({ id }) {
         document.querySelectorAll("#addToCart > img").forEach((img) => {
           img.setAttribute("style", "transform: translateX(7px); ");
         });
+        itemAddedMsg.style.animation = "none";
+        void itemAddedMsg.offsetWidth;
+        itemAddedMsg.textContent = "This item is already in your Cart";
+        void itemAddedMsg.offsetWidth;
+        itemAddedMsg.style.animation = "msg 3s forwards";
         duplicate = true;
       }
     });
@@ -32,14 +38,8 @@ export default function Item({ id }) {
 
   function addThisToCart() {
     checkCart();
-    const itemAddedMsg = document.querySelector(".itemAddedMsg");
 
     if (duplicate) {
-      itemAddedMsg.textContent = "This item is already in your Cart";
-      itemAddedMsg.style.animation = "none";
-      void itemAddedMsg.offsetWidth;
-      itemAddedMsg.style.animation = "msg 3s forwards";
-
       return;
     }
     data.forEach((item) => {

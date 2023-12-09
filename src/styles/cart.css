@@ -31,8 +31,34 @@
   width: 100%;
   font-size: 2rem;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
   padding: 30px;
+  position: relative;
+}
+
+.checkout {
+  font-size: 1.3rem;
+  border: none;
+  position: absolute;
+  top: 100%;
+  padding: 20px;
+  background-color: green;
+  color: white;
+  box-shadow: 1px 1px 20px green;
+  border-radius: 15px;
+  transition: 0.2s ease all;
+}
+.checkout:hover {
+  cursor: pointer;
+  background-color: lightgreen;
+  color: black;
+  box-shadow: 0px 0px 10px green;
+}
+.total > div {
+  font-size: large;
+  padding-bottom: 20px;
 }
 .empty {
   width: 100%;

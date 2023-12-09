@@ -170,6 +170,8 @@ nav > li {
 }
 
 .itemAddedMsg {
+  min-height: 0;
+  min-width: none;
   display: none;
   opacity: 0;
   position: absolute;

@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
 import Shop from "./pages/shop";
+import ErrorComponent from "./pages/Error";
 import { useEffect, useState } from "react";
 import { MyContext } from "./myContext";
 import Cart from "./pages/cart";
@@ -15,11 +16,11 @@ function App() {
         return res.json();
       })
       .then((dataFromApi) => {
-        console.log(dataFromApi);
         setData(dataFromApi);
       })
       .catch((err) => {
         console.log(err);
+        throw new Error(err);
       });
   }, []);
 
@@ -27,6 +28,7 @@ function App() {
     {
       path: "/",
       element: <Home />,
+      errorElement: <ErrorComponent />,
     },
     {
       path: "cart",
