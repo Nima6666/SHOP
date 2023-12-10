@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 Page made using react routing SPA.
 
--[goto-the-site](https://shop17179.netlify.app/)
+- [goto-the-site](https://shop17179.netlify.app/)
