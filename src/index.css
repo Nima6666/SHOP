@@ -38,6 +38,14 @@
 }
 
 @media (max-width: 650px) {
+  .checkout {
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  header {
+    padding: 10px;
+  }
   #shopBtn {
     font-size: 10vw;
   }

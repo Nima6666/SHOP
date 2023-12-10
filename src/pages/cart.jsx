@@ -11,7 +11,7 @@ export default function Cart() {
       <div className="cart">
         <div className="cartContainer">
           {cartItems.length < 1 ? (
-            <h1 className="empty">Its Empty IN here</h1>
+            <h1 className="empty">No Items In your Cart.</h1>
           ) : (
             cartItems.map((item) => {
               return (

@@ -4,8 +4,12 @@ import Header from "./components/header";
 import { Link, useParams } from "react-router-dom";
 import Item from "./components/Item";
 import { useEffect } from "react";
+import ErrorComponent from "./Error";
 export default function Shop(data) {
   const { id } = useParams();
+  if (id > data.data.length || id < 1 || (id && isNaN(parseInt(id)))) {
+    return <ErrorComponent />;
+  }
 
   useEffect(() => {
     document.querySelector("#shopNav").classList.add("active");
@@ -22,7 +26,7 @@ export default function Shop(data) {
             {data.data.map((eachItem) => {
               return (
                 <Link
-                  to={`${eachItem.id}`}
+                  to={`${parseInt(eachItem.id)}`}
                   className={"item" + eachItem.id}
                   id={eachItem.id}
                   key={eachItem.id}
